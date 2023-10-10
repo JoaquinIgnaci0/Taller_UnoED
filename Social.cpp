@@ -3,24 +3,14 @@
 #include "Usuario.h"
 #include <algorithm> // Para std::find
 
-Social::Social(const std::string& name, const std::string& developer, int classification,int price, int cantAmigos)
+Social::Social(const std::string& name, const std::string& developer, int classification,int price)
         : Software(name, developer, classification,price)
 {
     // Constructor de Social
-    this->cantidadAmigos = cantAmigos;
     this->listaAmigos = listaAmigos;
 
 }
 
-int Social::getCantAmigos()
-{
-    return this->cantidadAmigos;
-}
-
-void Social::setCantAmigos(int cantAmigos)
-{
-    this->cantidadAmigos = cantAmigos;
-}
 
 void Social::mostrarAmigos()
 {

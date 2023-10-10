@@ -14,4 +14,5 @@ public:
     void agregarSoftware(Software* software);
     void imprimirSoftware();
     void liberarSoftware();
+    bool borrarSoftware(const std::string& nombre);
 };

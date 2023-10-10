@@ -12,7 +12,9 @@ int Ofimatica::getCantArchCreate()
     return this->cantArchCreate;
 }
 
-void Ofimatica::setCantArchCreate(int archCreate)
-{
-    this->cantArchCreate = archCreate;
+void Ofimatica::crearArch() {
+    this->cantArchCreate ++;
+}
+void Ofimatica::eliminarArch() {
+    this -> cantArchCreate --;
 }

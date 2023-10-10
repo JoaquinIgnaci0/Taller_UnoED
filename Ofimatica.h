@@ -10,5 +10,7 @@ public:
     Ofimatica(const std::string& name, const std::string& developer, int classification,int price, int archCreate);
 
     int getCantArchCreate();
-    void setCantArchCreate(int archCreate);
+    void crearArch();
+    void eliminarArch();
+
 };

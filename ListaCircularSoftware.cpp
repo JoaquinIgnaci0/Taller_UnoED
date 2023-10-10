@@ -63,3 +63,43 @@ void ListaCircularSoftware::liberarSoftware() {
 
     inicio = nullptr;
 }
+bool ListaCircularSoftware::borrarSoftware(const std::string& nombre) {
+    if (!inicio) {
+        return false; // La lista está vacía, no se puede borrar nada.
+    }
+
+    NodoSoftware* actual = inicio;
+    NodoSoftware* anterior = nullptr;
+
+    do {
+        Software* software = actual->software;
+
+        // Verifica si el nombre del software coincide
+        if (software->getName() == nombre) {
+            // Elimina el nodo actual de la lista
+            if (actual == inicio) {
+                if (inicio->siguiente == inicio) {
+                    // La lista solo tiene un elemento
+                    inicio = nullptr;
+                } else {
+                    // Actualiza el inicio de la lista
+                    inicio = inicio->siguiente;
+                }
+            } else {
+                // Elimina el nodo actual de la lista
+                anterior->siguiente = actual->siguiente;
+            }
+
+            // Libera la memoria del software y el nodo actual
+            delete software;
+            delete actual;
+
+            return true; // Software encontrado y eliminado
+        }
+
+        anterior = actual;
+        actual = actual->siguiente;
+    } while (actual != inicio);
+
+    return false; // Software no encontrado en la lista
+}

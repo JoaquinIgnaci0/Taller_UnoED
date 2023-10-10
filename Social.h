@@ -6,11 +6,11 @@
 class Social : public Software
 {
 private:
-    int cantidadAmigos;
+
     std::vector<Usuario> listaAmigos;
 
 public:
-    Social(const std::string& name, const std::string& developer, int classification,int price, int cantAmigos);
+    Social(const std::string& name, const std::string& developer, int classification,int price);
 
     int getCantAmigos();
     void setCantAmigos(int cantAmigos);
